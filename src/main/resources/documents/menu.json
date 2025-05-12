@@ -1,0 +1,56 @@
+[
+  {
+    "category": "Coffee",
+    "name": "Espresso",
+    "size": "Small / Medium / Large",
+    "price": "$2.00 / $2.50 / $3.00"
+  },
+  {
+    "category": "Coffee",
+    "name": "Cappuccino",
+    "size": "Small / Medium / Large",
+    "price": "$2.50 / $3.00 / $3.50"
+  },
+  {
+    "category": "Coffee",
+    "name": "Latte",
+    "size": "Small / Medium / Large",
+    "price": "$2.50 / $3.00 / $3.50"
+  },
+  {
+    "category": "Tea",
+    "name": "Green Tea",
+    "size": "Small / Medium / Large",
+    "price": "$1.50 / $2.00 / $2.50"
+  },
+  {
+    "category": "Tea",
+    "name": "Black Tea",
+    "size": "Small / Medium / Large",
+    "price": "$1.50 / $2.00 / $2.50"
+  },
+  {
+    "category": "Non-Coffee",
+    "name": "Hot Chocolate",
+    "size": "Small / Medium / Large",
+    "price": "$2.00 / $2.50 / $3.00"
+  },
+  {
+    "category": "Non-Coffee",
+    "name": "Iced Lemonade",
+    "size": "Small / Medium / Large",
+    "price": "$2.00 / $2.50 / $3.00"
+  },
+  {
+    "category": "Specialty",
+    "name": "Caramel Macchiato",
+    "size": "Small / Medium / Large",
+    "price": "$3.00 / $3.50 / $4.00"
+  },
+  {
+    "category": "Specialty",
+    "name": "Mocha Frappe",
+    "size": "Small / Medium / Large",
+    "price": "$3.00 / $3.50 / $4.00"
+  }
+]

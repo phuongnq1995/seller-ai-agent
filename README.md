@@ -1,6 +1,6 @@
-# Advertise AI
+# Seller AI Agent
 
-A Spring Boot application that leverages Spring AI to generate sales advertisements in Vietnamese using AI models.
+Seller AI Agent is a Spring Boot application that leverages Spring AI and Google Gemini to assist coffee shop staff and customers in ordering drinks, generating sales advertisements, and managing orders. The agent interacts via REST API and integrates with AI models to provide dynamic, context-aware responses for sales and customer support at coffee shops.
 
 ## Overview
 
@@ -13,11 +13,22 @@ This application demonstrates how to use Spring AI with Google's Gemini model to
 - Generates sales advertisements in Vietnamese
 - Configurable AI model parameters
 
+## Technology Stack
+
+- Java 21
+- Spring Boot
+- Spring AI
+- Google Gemini 2.0 Flash (via OpenAI-compatible API)
+- PostgreSQL (with pgvector for vector search)
+- Maven
+- Docker (optional, for running dependencies)
+
 ## Prerequisites
 
 - Java 21
 - Maven
 - OpenAI API key (set as environment variable)
+- PostgreSQL (with pgvector for vector search)
 
 ## Configuration
 
@@ -25,8 +36,6 @@ The application is configured to use Google's Gemini model through the OpenAI-co
 
 ```yaml
 spring:
-  application:
-    name: advertise-ai
   ai:
     openai:
       api-key: ${OPENAI_API_KEY}
@@ -35,6 +44,10 @@ spring:
         completions-path: /chat/completions
         options:
           model: gemini-2.0-flash-exp
+      embedding:
+        embeddings-path: /embeddings
+        options:
+          model: embedding-001
 ```
 
 ## Environment Variables
@@ -57,11 +70,40 @@ mvn clean install
 mvn spring-boot:run
 ```
 
-Or after building:
+## Usage Example
+
+### 1. Start the Application
+
+Build and run the application (ensure PostgreSQL is running and environment variables are set):
 
 ```bash
-java -jar target/advertise-ai-0.0.1-SNAPSHOT.jar
+mvn clean spring-boot:run
 ```
+
+Or, using Docker Compose:
+
+```bash
+docker-compose up --build
+```
+
+### 2. Example API Request
+
+Send a POST request to the seller assistant endpoint:
+
+```bash
+curl -X POST "http://localhost:8080/api/store/assistant?q=Order+2+Espresso+and+1+Latte"
+```
+
+Sample response:
+```
+{"content": "Your order for 2 Espresso and 1 Latte has been received. Please provide your location."}
+```
+
+You can also interact with the assistant to:
+- Get a list of drinks
+- Make a draft bill
+- Confirm and process orders
+- Get today's weather
 
 ## How It Works
 
@@ -78,12 +120,6 @@ The application:
 3. What are your expected benefits if you get this job?
 4. When you are available to start?
 
-## Technologies
-
-- Spring Boot 3.4.4
-- Spring AI 1.0.0-M6
-- Java 21
-
 ## License
 
 [Add your license information here]
@@ -91,5 +127,3 @@ The application:
 ## Author
 
 [Add author information here]
-
-
