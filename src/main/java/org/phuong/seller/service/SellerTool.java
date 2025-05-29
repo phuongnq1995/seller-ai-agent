@@ -1,11 +1,8 @@
 package org.phuong.seller.service;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
-import java.math.BigDecimal;
-import java.util.Random;
 import lombok.RequiredArgsConstructor;
-import org.phuong.seller.dto.DraftBill;
+import org.phuong.seller.dto.OrderDetails;
 import org.springframework.ai.tool.annotation.Tool;
 import org.springframework.stereotype.Service;
 
@@ -13,32 +10,20 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class SellerTool {
 
-  private final RevenueService revenueService;
+  private final OrderService orderService;
 
-  @Tool(description = "Make a draft bill")
-  public DraftBill makeDraftBill(String drinkNames) throws IOException {
-    System.out.println("Make a draft bill for: " + drinkNames);
-    DraftBill draftBill = new DraftBill(BigDecimal.valueOf(10.3f));
-    return draftBill;
+  @Tool(description = "Get order details")
+  public OrderDetails getOrderDetails(String orderAddress, String customerName, String drinkNames) throws IOException {
+    System.out.println("Get order details: " + drinkNames);
+    OrderDetails orderDetails = orderService.getOrderDetails(orderAddress, customerName, drinkNames);
+    System.out.println(orderDetails);
+    return orderDetails;
   }
 
   @Tool(description = "Process order")
-  public void processOrder(String confirmation, DraftBill draftBill) throws IOException {
+  public void processOrder(String orderAddress, String customerName, String orderNumber) throws IOException {
     System.out.println("Send notification to process order...");
-    System.out.println("Process order with confirmation: " + confirmation + " and totalAmount: " + draftBill);
-    revenueService.addBill(draftBill);
-  }
-
-  @Tool(description = "Get today weather")
-  public String getTodayWeather() throws IOException {
-    System.out.println("Get today weather");
-    int i = new Random().nextInt(2);
-    String weather = switch (i) {
-      case 0 -> "Sunny";
-      case 1 -> "Cloudy";
-      case 2 -> "Rain";
-      default -> throw new IllegalStateException("Unexpected value: " + i);
-    };
-    return new ObjectMapper().writeValueAsString(weather);
+    System.out.println("Process order with orderNumber: " +orderNumber+ ", orderAddress: " + orderAddress + " and totalAmount: " + customerName);
+    orderService.processOrder(orderAddress);
   }
 }

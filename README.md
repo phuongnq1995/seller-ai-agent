@@ -10,7 +10,6 @@ This application demonstrates how to use Spring AI with Google's Gemini model to
 
 - Integration with Spring AI framework
 - Uses Google's Gemini 2.0 Flash model for text generation
-- Generates sales advertisements in Vietnamese
 - Configurable AI model parameters
 
 ## Technology Stack
@@ -21,7 +20,7 @@ This application demonstrates how to use Spring AI with Google's Gemini model to
 - Google Gemini 2.0 Flash (via OpenAI-compatible API)
 - PostgreSQL (with pgvector for vector search)
 - Maven
-- Docker (optional, for running dependencies)
+- Docker (optional, for running locally)
 
 ## Prerequisites
 
@@ -91,12 +90,16 @@ docker-compose up --build
 Send a POST request to the seller assistant endpoint:
 
 ```bash
-curl -X POST "http://localhost:8080/api/store/assistant?q=Order+2+Espresso+and+1+Latte"
+curl -X POST "http://localhost:8080/api/store/assistant?q={query}"
+```
+Sample request:
+```
+Hi, I'd like to order a coffee
 ```
 
 Sample response:
 ```
-{"content": "Your order for 2 Espresso and 1 Latte has been received. Please provide your location."}
+Okay, which coffee would you like to order? We have Cappuccino, Latte, Caramel Macchiato, and Espresso.
 ```
 
 You can also interact with the assistant to:

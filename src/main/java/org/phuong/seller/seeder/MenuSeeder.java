@@ -42,7 +42,7 @@ public class MenuSeeder implements ApplicationRunner {
       return;
     }
 
-    JsonReader jsonReader = new JsonReader(menuResource, "category", "name", "size", "price");
+    JsonReader jsonReader = new JsonReader(menuResource, "category", "name", "description", "recommendation");
     List<Document> addingDocuments = jsonReader.get();
     vectorStore.add(addingDocuments);
   }

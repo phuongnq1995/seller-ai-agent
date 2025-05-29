@@ -6,6 +6,8 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class DraftBill {
-  private BigDecimal totalAmount;
+public class OrderItem {
+  private String name;
+  private int quantity;
+  private BigDecimal price;
 }

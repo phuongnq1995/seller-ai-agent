@@ -2,55 +2,18 @@
   {
     "category": "Coffee",
     "name": "Espresso",
-    "size": "Small / Medium / Large",
-    "price": "$2.00 / $2.50 / $3.00"
+    "description": "A concentrated shot of rich, bold coffee with a strong aroma and deep flavor. Perfect for a quick energy boost."
   },
   {
-    "category": "Coffee",
     "name": "Cappuccino",
-    "size": "Small / Medium / Large",
-    "price": "$2.50 / $3.00 / $3.50"
+    "description": "A balanced blend of espresso, steamed milk, and foam. Creamy on top with a strong coffee base, often dusted with cocoa."
   },
   {
-    "category": "Coffee",
     "name": "Latte",
-    "size": "Small / Medium / Large",
-    "price": "$2.50 / $3.00 / $3.50"
+    "description": "A smooth, milky coffee with a mild espresso flavor, topped with a light layer of foam. Comforting and easy to drink."
   },
   {
-    "category": "Tea",
-    "name": "Green Tea",
-    "size": "Small / Medium / Large",
-    "price": "$1.50 / $2.00 / $2.50"
-  },
-  {
-    "category": "Tea",
-    "name": "Black Tea",
-    "size": "Small / Medium / Large",
-    "price": "$1.50 / $2.00 / $2.50"
-  },
-  {
-    "category": "Non-Coffee",
-    "name": "Hot Chocolate",
-    "size": "Small / Medium / Large",
-    "price": "$2.00 / $2.50 / $3.00"
-  },
-  {
-    "category": "Non-Coffee",
-    "name": "Iced Lemonade",
-    "size": "Small / Medium / Large",
-    "price": "$2.00 / $2.50 / $3.00"
-  },
-  {
-    "category": "Specialty",
     "name": "Caramel Macchiato",
-    "size": "Small / Medium / Large",
-    "price": "$3.00 / $3.50 / $4.00"
-  },
-  {
-    "category": "Specialty",
-    "name": "Mocha Frappe",
-    "size": "Small / Medium / Large",
-    "price": "$3.00 / $3.50 / $4.00"
+    "description": "A layered drink with espresso, steamed milk, and caramel syrup—rich, sweet, and slightly bold."
   }
 ]
