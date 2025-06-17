@@ -108,21 +108,6 @@ You can also interact with the assistant to:
 - Confirm and process orders
 - Get today's weather
 
-## How It Works
-
-The application:
-
-1. Initializes a Spring AI ChatClient with a temperature of 0 (for deterministic outputs)
-2. Sets a system prompt that instructs the AI to act as a sales assistant for children's products on Facebook for Vietnamese users
-3. Sends a user prompt requesting an advertisement for children's hats for ages 3 months to 4 years
-4. Prints the generated advertisement to the console
-
-## Question Tests
-1. Hi I'm John your interviewer, can you give me some background about yourself?
-2. Tell me about the projects that you have worked on with Java
-3. What are your expected benefits if you get this job?
-4. When you are available to start?
-
 ## License
 
 [Add your license information here]
