@@ -4,7 +4,7 @@ Seller AI Agent is a Spring Boot application that leverages Spring AI and Google
 
 ## Overview
 
-This application demonstrates how to use Spring AI with Google's Gemini model to generate sales advertisements for children's products targeted at Vietnamese Facebook users. It's a simple command-line application that sends a prompt to the AI model and displays the generated advertisement.
+This application demonstrates how to use Spring AI with Google's Gemini model to sales assistant and customer support agent.
 
 ## Features
 
